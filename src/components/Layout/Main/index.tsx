@@ -30,7 +30,7 @@ const MainLayout = ({
         <meta property="og:description" content={description} />
         <meta property="og:title" content={pageTitle} />
         {DEFAULT_DESCRIPTION?.map((item, id) => (
-          <meta property="og:description" content={item} />
+          <meta property="og:description" content={item} key={id}/>
         ))}
         <meta property="og:url" content={url} />
         <meta property="og:url" content={url} />

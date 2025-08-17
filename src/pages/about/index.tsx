@@ -1,10 +1,10 @@
 import { MainLayoutWithNoSSR } from '@components/Layout/Main';
 import Image from 'next/image';
-import { FaFacebookF } from 'react-icons/fa';
+import { FaLinkedinIn, FaTiktok } from 'react-icons/fa';
 import { FiInstagram } from 'react-icons/fi';
-import { SiZalo } from 'react-icons/si';
 import { Wrapper } from '../../components/Layout';
-import { DEFAULT_DESCRIPTION } from '@utils/constants';
+import Link from 'next/link';
+import { IoIosMail, IoMdAddCircleOutline } from 'react-icons/io';
 
 const AboutPage = () => {
   return (
@@ -17,21 +17,27 @@ const AboutPage = () => {
       <Wrapper className="bg-content dark:bg-[#8dc4d1] mt-24 sm:mt-20 p-12 border border-black rounded-md shadow-md text-center w-full sm:w-[80%] mx-auto">
         <Wrapper className="flex items-center justify-center">
           <div className="w-28 h-28 rounded-full relative border border-black">
-            <Image src={'/avatar/avatar9.jpg'} alt="Author" fill className="absolute rounded-full " />
+            <Image src={'/avatar/avatar9.jpg'} alt="Author" fill className="absolute rounded-full object-cover" />
           </div>
           <div className="px-4">
-            <h3 className="font-title font-bold text-2xl mb-2">Jonathan Doe</h3>
-            <span className="text-center block">Founder & Editor</span>
+            <h3 className="text-left font-title font-bold text-2xl mb-2">Sam Do (Thuy Do Thi)</h3>
+            <span className="text-left block">Web Developer</span>
           </div>
         </Wrapper>
         <p className="my-8">
-          Hello! My name is Jonathan Doe working from Chile. I create some Ghost and Wordpress themes for differents
+          Hello! My name is Sam working from VietNam. I create some Ghost and Wordpress themes for differents
           markets, also, i offer live support via our ticket system.
         </p>
         <div className="flex items-center justify-center">
-          <FaFacebookF fontSize={'1.5rem'} color="#175beb" className="mr-2" />
-          <FiInstagram fontSize={'1.5rem'} color="#ef00a2" className="mx-2" />
-          <SiZalo fontSize={'1.5rem'} color="#1da1f2" className="mx-2" />
+          <Link href={'mailto:dothuy302000@gmail.com'} passHref className="flex items-center mx-2">
+            <IoIosMail  fontSize={'2rem'} color="#edd239" />
+          </Link>
+          <Link href={'https://www.instagram.com/dev._.dumb/'} passHref className="flex items-center mx-2">
+            <FiInstagram fontSize={'1.5rem'} color="#ef00a2" />
+          </Link>
+          <Link href={'https://www.linkedin.com/in/thuysddoox/'} passHref className="flex items-center mx-2">
+            <FaLinkedinIn fontSize={'1.5rem'} color="#175beb" />
+          </Link>
         </div>
       </Wrapper>
     </MainLayoutWithNoSSR>

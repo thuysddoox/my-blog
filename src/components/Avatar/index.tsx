@@ -1,8 +1,8 @@
 import { Wrapper } from '@components/Layout';
 import Image from 'next/image';
-import { FaFacebookF } from 'react-icons/fa';
+import Link from 'next/link';
+import { FaLinkedinIn, FaTiktok } from 'react-icons/fa';
 import { FiInstagram } from 'react-icons/fi';
-import { SiZalo } from 'react-icons/si';
 
 const Avatar = () => {
   return (
@@ -10,13 +10,19 @@ const Avatar = () => {
       <div className="w-20 h-20 rounded-full relative border border-black">
         <Image src={'/avatar/avatar.jpg'} alt="Author" fill className="absolute rounded-full" />
       </div>
-      <div className="px-0 lg:px-4 text-center lg:text-left my-2">
-        <h3 className="font-title font-bold text-xl">Jonathan Doe</h3>
-        <span className="text-[15px]">Founder & Editor</span>
+      <div className="pr-0 lg:pr-4 text-center lg:text-left my-2">
+        <h3 className="font-title font-bold text-xl">Sam (Thuy Do Thi)</h3>
+        <span className="text-[15px]">Developer</span>
         <div className="flex items-center justify-center xl:justify-start mt-2">
-          <FaFacebookF color="#175beb" className="mr-2" />
-          <FiInstagram color="#ef00a2" className="mx-2" />
-          <SiZalo color="#1da1f2" className="mx-2" />
+          <Link href={'https://www.instagram.com/dev._.dumb/'} passHref className="flex items-center mr-2">
+            <FiInstagram color="#ef00a2" />
+          </Link>
+          <Link href={'https://www.linkedin.com/in/thuysddoox/'} passHref className="flex items-center mx-2">
+            <FaLinkedinIn color="#175beb" />
+          </Link>
+          <Link href={''} passHref className="flex items-center mx-2">
+            <FaTiktok color="black" />
+          </Link>
         </div>
       </div>
     </Wrapper>

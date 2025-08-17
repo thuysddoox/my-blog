@@ -1,20 +1,18 @@
+import { useQuery } from '@apollo/client';
+import SearchModal from '@components/SearchModal';
+import { Tag } from '@interfaces/common';
+import { GET_TAGS } from '@services/tag';
+import { useOutsideAlerter } from '@utils/hooks/useOutsideAlerter';
+import Dropdown from '@utils/lib/Dropdown';
+import { Dot } from '@utils/lib/Tag';
 import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import { FaFacebookF, FaTiktok } from 'react-icons/fa';
+import { FiInstagram, FiSearch } from 'react-icons/fi';
+import { IoMdClose } from 'react-icons/io';
+import { RiMenu2Line } from 'react-icons/ri';
 import { Wrapper } from '../Layout';
 import ThemeSwitcher from '../ThemeSwitcher';
-import { FaFacebookF } from 'react-icons/fa';
-import { FiInstagram, FiSearch } from 'react-icons/fi';
-import { ImSkype } from 'react-icons/im';
-import { SiZalo } from 'react-icons/si';
-import { RiMenu2Line } from 'react-icons/ri';
-import { useEffect, useRef, useState } from 'react';
-import SearchModal from '@components/SearchModal';
-import Dropdown from '@utils/lib/Dropdown';
-import { IoMdClose } from 'react-icons/io';
-import { useQuery } from '@apollo/client';
-import { GET_TAGS } from '@services/tag';
-import { Tag } from '@interfaces/common';
-import { Dot } from '@utils/lib/Tag';
-import { useOutsideAlerter } from '@utils/hooks/useOutsideAlerter';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -108,9 +106,9 @@ const Header = () => {
           </li>
         </ul>
         <div className="flex items-center justify-between py-4 md:py-0">
-          <FaFacebookF fontSize="1.3rem" color="#175beb" className="mx-3 block sm:hidden lg:block" />
+          {/* <FaFacebookF fontSize="1.3rem" color="#175beb" className="mx-3 block sm:hidden lg:block" />
           <FiInstagram fontSize="1.3rem" color="#ef00a2" className="mx-3 block sm:hidden lg:block" />
-          <ImSkype fontSize="1.3rem" color="#1da1f2" className="mx-3 block sm:hidden lg:block" />
+          <FaTiktok fontSize="1.3rem" color="black" className="mx-3 block sm:hidden lg:block" /> */}
           <ThemeSwitcher className="ml-4" />
         </div>
       </div>
