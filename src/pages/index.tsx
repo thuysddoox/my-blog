@@ -41,9 +41,12 @@ export default function Home({ totalPage = 1 }: { totalPage: number }) {
           ) : (
             <>
               <Wrapper className="pb-6">
-                {data?.articles?.map((article: Article) => (
+                {data?.articles?.length > 0 ? data?.articles?.map((article: Article) => (
                   <Post article={article} key={article?.id} />
-                ))}
+                )) : 
+                  <em className="w-full font-bold text-xl sm:text-2xl mt-8 sm:mt-12 text-center w-full inline-block text-black dark:text-white">Articles under construction!</em>
+                
+                }
               </Wrapper>
               {totalPage > 1 && (
                 <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPage={totalPage} />

@@ -50,9 +50,11 @@ const TagPage = ({ tag, totalPage = 1 }: { tag: Tag; totalPage: number }) => {
           ) : (
             <>
               <Wrapper className="pb-6">
-                {data?.articles?.map((article: Article, index: number) => (
+                {data?.articles?.length > 0 ? data?.articles?.map((article: Article, index: number) => (
                   <Post key={article?.id ?? index} article={article} />
-                ))}
+                )) :
+                  <em className="w-full font-bold text-xl sm:text-2xl mt-8 sm:mt-12 text-center inline-block text-black dark:text-white">Articles under construction!</em>
+                }
               </Wrapper>
               {totalPage > 1 && (
                 <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPage={totalPage} />
