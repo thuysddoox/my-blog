@@ -6,7 +6,7 @@ import { FiInstagram } from 'react-icons/fi';
 
 const FollowMe = ({ className }: { className?: string }) => {
   return (
-    <WrapperContent title="Follow Me!" className={className}>
+    <WrapperContent title="Connect Me!" className={className}>
       <ul className="font-title">
         <li>
           <Link href={'https://www.facebook.com/thuy.o.366692'} passHref className="flex items-center mb-3">
