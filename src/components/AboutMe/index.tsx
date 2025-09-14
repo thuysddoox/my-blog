@@ -7,8 +7,7 @@ const AboutMe = ({className}:{className?: string}) => {
       <div>
         <Avatar />
         <p className="mt-4 text-[15px]">
-          Hello! My name is Sam working from VietNam. I create some Ghost and Wordpress themes for differents
-          markets, also, i offer live support via our ticket system.
+          Hello! My name is Sam working from VietNam. Welcome to my blog where I share the tiny knowledge I know and the tiny things in life.
         </p>
       </div>
     </WrapperContent>

@@ -1,12 +1,12 @@
 import { MainLayoutWithNoSSR } from '@components/Layout/Main';
+import { ThemeColorContext, ThemeColorContextIProps } from '@utils/contexts/themeContext';
 import Image from 'next/image';
-import { FaLinkedinIn, FaTiktok } from 'react-icons/fa';
-import { FiInstagram } from 'react-icons/fi';
+import { useContext } from 'react';
 import { Wrapper } from '../../components/Layout';
-import Link from 'next/link';
-import { IoIosMail, IoMdAddCircleOutline } from 'react-icons/io';
 
 const AboutPage = () => {
+     const { themeApp } = useContext(ThemeColorContext) as ThemeColorContextIProps;
+
   return (
     <MainLayoutWithNoSSR
       classFooter="block"
@@ -17,7 +17,7 @@ const AboutPage = () => {
       <Wrapper className="bg-content dark:bg-[#8dc4d1] mt-24 sm:mt-20 p-12 border border-black rounded-md shadow-md text-center w-full sm:w-[80%] mx-auto">
         <Wrapper className="flex items-center justify-center">
           <div className="w-28 h-28 rounded-full relative border border-black">
-            <Image src={'/avatar/avatar9.jpg'} alt="Author" fill className="absolute rounded-full object-cover" />
+            <Image src={themeApp == 'dark' ? '/avatar/avatar11.jpg' : '/avatar/avatar12.jpg'} alt="Author" fill className="absolute rounded-full object-cover" />
           </div>
           <div className="px-4">
             <h3 className="text-left font-title font-bold text-2xl mb-2">Sam Do (Thuy Do Thi)</h3>
@@ -25,10 +25,9 @@ const AboutPage = () => {
           </div>
         </Wrapper>
         <p className="my-8">
-          Hello! My name is Sam working from VietNam. I create some Ghost and Wordpress themes for differents
-          markets, also, i offer live support via our ticket system.
+          "Hello, I’m Sam, a web developer from Vietnam. Welcome to here! This blog is a personal space where I share my thoughts and experiences about web development, along with bits of everyday life. The knowledge I share here comes from my own learning and practice, so it may not always be perfect — just my perspective."
         </p>
-        <div className="flex items-center justify-center">
+        {/* <div className="flex items-center justify-center">
           <Link href={'mailto:dothuy302000@gmail.com'} passHref className="flex items-center mx-2">
             <IoIosMail  fontSize={'2rem'} color="#edd239" />
           </Link>
@@ -38,7 +37,7 @@ const AboutPage = () => {
           <Link href={'https://www.linkedin.com/in/thuysddoox/'} passHref className="flex items-center mx-2">
             <FaLinkedinIn fontSize={'1.5rem'} color="#175beb" />
           </Link>
-        </div>
+        </div> */}
       </Wrapper>
     </MainLayoutWithNoSSR>
   );

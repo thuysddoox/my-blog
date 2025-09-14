@@ -1,5 +1,6 @@
 import WrapperContent from '@components/Layout/WrapperContent';
 import Link from 'next/link';
+import { BsAt } from 'react-icons/bs';
 import { FaFacebookF, FaLinkedinIn, FaTiktok } from 'react-icons/fa';
 import { FiInstagram } from 'react-icons/fi';
 
@@ -31,12 +32,20 @@ const FollowMe = ({ className }: { className?: string }) => {
             <span className="font-medium text-base sm:text-lg">LinkedIn</span>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link href={''} passHref className="flex items-center mb-3">
             <span className="inline-block p-3 mr-3 rounded-full bg-white dark:bg-[#EAFDFC] border border-black press">
               <FaTiktok  fontSize="1.2rem" color="black" />
             </span>
             <span className="font-medium text-base sm:text-lg">Tiktok</span>
+          </Link>
+        </li> */}
+        <li>
+          <Link href={'mailto:dothuy302000@gmail.com'} passHref className="flex items-center mb-3">
+            <span className="inline-block p-3 mr-3 rounded-full bg-white dark:bg-[#EAFDFC] border border-black press">
+              <BsAt  fontSize="1.2rem" color="#D93647" />
+            </span>
+            <span className="font-medium text-base sm:text-lg">Email</span>
           </Link>
         </li>
       </ul>
