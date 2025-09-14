@@ -9,9 +9,16 @@ export const ThemeColorContext = React.createContext<ThemeColorContextIProps>({
 });
 
 const ThemeProvider = ({ children }: { children: any }) => {
-  const {theme} = useThemeColor()
-  const [themeApp, setThemeApp] = useState<string>('light');
-  useEffect(()=>{setThemeApp(theme)},[theme])
+  const { theme, setTheme } = useThemeColor()
+  const [themeApp, setThemeApp] = useState<string>(theme);
+  useEffect(() => {
+    setThemeApp(theme)
+  }, [])
+
+  useEffect(() => {
+    setTheme(themeApp)
+  }, [themeApp])
+  
   return <ThemeColorContext.Provider value={{ themeApp, setThemeApp }}>{children}</ThemeColorContext.Provider>;
 };
 

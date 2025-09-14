@@ -32,20 +32,18 @@ const ThemeSwitcherWrapper = styled.div<{ mode: string }>`
 }`;
 
 const ThemeSwitcher = ({ className }: { className?: string }) => {
-  const { theme, setTheme } = useThemeColor();
-  const { setThemeApp } = useContext(ThemeColorContext) as ThemeColorContextIProps;
+  const { themeApp, setThemeApp } = useContext(ThemeColorContext) as ThemeColorContextIProps;
   const handleChangeMode = () => {
-    theme === 'dark' ? setTheme('light') : setTheme('dark');
-    theme === 'dark' ? setThemeApp?.('light') : setThemeApp?.('dark');
+    setThemeApp?.(themeApp === 'dark' ? 'light' : 'dark');
   };
   return (
-    <ThemeSwitcherWrapper mode={theme} className={`${className} flex p-2 rounded-[28px] border-2 border-black w-max`}>
+    <ThemeSwitcherWrapper mode={themeApp} className={`${className} flex p-2 rounded-[28px] border-2 border-black w-max`}>
       <div className="switch"></div>
-      <Wrapper className={`${theme !== 'dark' ? 'active' : ''} p-[6px] mr-2 cursor-pointer sun`}>
-        <BsFillSunFill onClick={handleChangeMode} color={theme !== 'dark' ? '#EFB099' : '#8DC4D1'} />
+      <Wrapper className={`${themeApp !== 'dark' ? 'active' : ''} p-[6px] mr-2 cursor-pointer sun`}>
+        <BsFillSunFill onClick={handleChangeMode} color={themeApp !== 'dark' ? '#EFB099' : '#8DC4D1'} />
       </Wrapper>
-      <Wrapper className={`${theme === 'dark' ? 'active' : ''} p-[6px] ml-2 cursor-pointer moon`}>
-        <BsFillMoonFill onClick={handleChangeMode} color={theme !== 'dark' ? '#D6C2B5' : '#fff'} />
+      <Wrapper className={`${themeApp === 'dark' ? 'active' : ''} p-[6px] ml-2 cursor-pointer moon`}>
+        <BsFillMoonFill onClick={handleChangeMode} color={themeApp !== 'dark' ? '#D6C2B5' : '#fff'} />
       </Wrapper>
     </ThemeSwitcherWrapper>
   );
