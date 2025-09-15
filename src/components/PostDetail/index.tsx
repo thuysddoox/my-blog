@@ -52,7 +52,7 @@ const PostDetail = ({ article }: { article: Article }) => {
                     src={`/avatar/avatar${new Date(article?.createdAt ?? '').getDay() + 1}.jpg`}
                     alt="Author"
                     fill
-                    className="absolute rounded-full"
+                    className="absolute rounded-full object-cover"
                   />
                 </div>
                 <span className="font-semibold ml-3 text-[15px]">Dev_Dumb</span>
@@ -64,7 +64,7 @@ const PostDetail = ({ article }: { article: Article }) => {
             </div>
           </div>
         </div>
-        <div className="px-3 py-2 sm:p-5 lg:p-8">{parse(article?.content?.html ?? '')}</div>
+        <div className="px-3 py-2 sm:p-5 lg:p-8 content-rte">{parse(article?.content?.html ?? '')}</div>
       </div>
     </Wrapper>
   );

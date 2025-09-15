@@ -55,7 +55,7 @@ const Post = ({ article }: { article?: Article }) => {
         <TitleTruncate className="font-title font-bold text-2xl md:text-3xl my-4 md:my-5 link" lineclamp={2}>
           <Link href={`/post/${article?.slug}`}>{article?.title}</Link>
         </TitleTruncate>
-        <TitleTruncate lineclamp={4} dangerouslySetInnerHTML={{ __html: article?.content?.html ?? '' }}></TitleTruncate>
+        <TitleTruncate className='content-rte' lineclamp={4} dangerouslySetInnerHTML={{ __html: article?.content?.html ?? '' }}></TitleTruncate>
         <div className="mt-6 md:mt-10">
           <Link href={`/post/${article?.slug}`} passHref className="inline-block">
             <Button
