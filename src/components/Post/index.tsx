@@ -11,7 +11,7 @@ import { BsFillChatFill, BsHeartArrow } from 'react-icons/bs';
 import readingTime from 'reading-time';
 
 const Post = ({ article }: { article?: Article }) => {
-  const readTime = readingTime(article?.content?.html ?? '' + article?.title + article?.createdAt).minutes;
+  const readTime = Math.ceil(readingTime(article?.content?.html ?? '' + article?.title + article?.createdAt).minutes);
   return (
     <Wrapper className="flex flex-wrap relative items-stretch p-5 md:p-6 border border-black rounded-xl bg-content dark:bg-[#8dc4d1] mb-5 sm:mb-8">
       <div className="relative w-full sm:w-1/3 border border-black rounded-xl press min-h-[250px] sm:min-h-[unset]">

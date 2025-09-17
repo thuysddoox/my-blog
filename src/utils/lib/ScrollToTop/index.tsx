@@ -18,8 +18,8 @@ const ScrollToTop = () => {
   return (
     <button
       onClick={handleScrollToTop}
-      className={`p-4 sm:p-5 z-10 origin-center bg-white dark:bg-[#EAFDFC] shadow-md inline-block border border-black transition-all duration-300 rounded-full fixed ${
-        isShow ? 'scale-100 right-[30px] bottom-[30px]' : 'scale-0 right-0 bottom-0'
+      className={`p-2 sm:p-5 z-10 origin-center bg-white dark:bg-[#EAFDFC] shadow-md inline-block border border-black transition-all duration-300 rounded-full fixed ${
+        isShow ? 'scale-100 right-[12px] bottom-[12px] sm:right-[30px] sm:bottom-[30px]' : 'scale-0 right-0 bottom-0'
       }`}
     >
       <IoIosArrowUp />

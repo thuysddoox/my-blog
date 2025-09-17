@@ -10,7 +10,7 @@ import readingTime from 'reading-time';
 
 const PostDetail = ({ article }: { article: Article }) => {
   const router = useRouter();
-  const readTime = readingTime(article?.content?.html ?? '' + article.title + article.createdAt).minutes;
+  const readTime = Math.ceil(readingTime(article?.content?.html ?? '' + article.title + article.createdAt).minutes);
   return (
     <Wrapper>
       <div className="sticky top-[300px] h-[0] left-0 inline-block sm:-translate-x-1/2 -translate-y-1/2 -translate-x-[40%] z-[9]">
@@ -64,7 +64,7 @@ const PostDetail = ({ article }: { article: Article }) => {
             </div>
           </div>
         </div>
-        <div className="px-3 py-2 sm:p-5 lg:p-8 content-rte">{parse(article?.content?.html ?? '')}</div>
+        <div className="py-2 sm:p-5 lg:p-8 content-rte">{parse(article?.content?.html ?? '')}</div>
       </div>
     </Wrapper>
   );
